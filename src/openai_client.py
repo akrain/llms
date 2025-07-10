@@ -1,3 +1,5 @@
+import sys
+
 import openai
 import os
 
@@ -12,9 +14,9 @@ except KeyError:
 LLM_MODEL = "gpt-4.1-mini-2025-04-14"
 EXIT_CMD = "/exit"
 CHAT_INSTRUCTIONS = "You are a bot for Gen Alpha kids. You will talk in Gen Alpha lingo"
-MCP_INSTRUCTIONS = """You are an assistant for a project's Git repository. 
-Answer questions about the repository in a concise manner. 
-Do not add more information than what is asked for. 
+MCP_INSTRUCTIONS = """You are an assistant for a project's Git repository.
+Answer questions about the repository in a concise manner.
+Do not add more information than what is asked for.
 Do not summarize unless explicitly asked to summarize."""
 
 
@@ -104,7 +106,7 @@ def get_chat_func(choice):
         print("Selected MCP chat")
     else:
         print_exit_msg()
-        exit(0)
+        sys.exit(0)
     return chat_func
 
 
