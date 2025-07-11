@@ -8,3 +8,12 @@ Do not summarize unless explicitly asked to summarize."""
 
 EXIT_CMD = "/exit"
 DB_FILENAME = "../data/test.db"
+
+EMBEDDING = "embedding"
+COMBINED = "combined"
+SERIES_TITLE = "Series_Title"
+RELEASED_YEAR = "Released_Year"
+GENRE = "Genre"
+IMDB_RATING = "IMDB_Rating"
+OVERVIEW = "Overview"
+SIMILARITY = "similarity"
