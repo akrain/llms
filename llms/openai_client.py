@@ -6,18 +6,24 @@ import os
 from openai.types.responses import Response
 from openai.types.responses.tool_param import Mcp
 
+from llms.constants import EMBEDDINGS_MODEL, LLM_MODEL, EXIT_CMD, CHAT_INSTRUCTIONS
+
 try:
     openai.api_key = os.environ["OPENAI_API_KEY"]
 except KeyError:
     raise ValueError("OPENAI_API_KEY environment variable not set")
 
-LLM_MODEL = "gpt-4.1-mini-2025-04-14"
-EXIT_CMD = "/exit"
-CHAT_INSTRUCTIONS = "You are a bot for Gen Alpha kids. You will talk in Gen Alpha lingo"
-MCP_INSTRUCTIONS = """You are an assistant for a project's Git repository.
-Answer questions about the repository in a concise manner.
-Do not add more information than what is asked for.
-Do not summarize unless explicitly asked to summarize."""
+
+def create_embeddings(inputs: list):
+    try:
+        return openai.embeddings.create(
+            input=inputs,
+            model=EMBEDDINGS_MODEL,
+            dimensions=256,
+        )
+    except openai.APIError as e:
+        # Handle API error here, e.g. retry or log
+        print(f"OpenAI API error occurred while processing this request: {e}")
 
 
 def chat(instructions: str, message: str, previous_response_id: str | None, stream: bool):
