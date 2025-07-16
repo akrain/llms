@@ -28,9 +28,10 @@ export OPENAI_API_KEY="your-api-key-here"
 
 ## Usage
 
-Run the application:
+### OpenAI Client
+Run the interactive chat application:
 ```bash
-python openai_client.py
+python llms/openai_client.py
 ```
 
 Select from the menu:
@@ -39,6 +40,22 @@ Select from the menu:
 - **Press any other key**: Exit the application
 
 Use `/exit` to end the current chat session.
+
+### Generate Embeddings
+Generate embeddings for the IMDB dataset:
+```bash
+python llms/generate_embeddings.py
+```
+
+This will read the IMDB CSV data, create embeddings for each movie, and save them to a SQLite database.
+
+### Semantic Search
+Search through movies using semantic similarity:
+```bash
+python llms/semantic_search.py
+```
+
+Enter search queries to find movies based on semantic similarity. Use `/exit` to quit the search interface.
 
 ## Configuration
 
