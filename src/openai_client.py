@@ -6,7 +6,7 @@ import os
 from openai.types.responses import Response
 from openai.types.responses.tool_param import Mcp
 
-from constants import EMBEDDINGS_MODEL, LLM_MODEL, EXIT_CMD, CHAT_INSTRUCTIONS
+from constants import OPENAI_EMBEDDINGS_MODEL, OPENAI_LLM_MODEL, EXIT_CMD, SYSTEM_INSTRUCTIONS
 
 try:
     openai.api_key = os.environ["OPENAI_API_KEY"]
@@ -93,7 +93,7 @@ def main():
         if message == EXIT_CMD:
             print_exit_msg()
             break
-        response = chat_func(CHAT_INSTRUCTIONS, message, previous_response_id, False)
+        response = chat_func(SYSTEM_INSTRUCTIONS, message, previous_response_id, False)
         if response:
             previous_response_id = handle_response(response, previous_response_id)
 
