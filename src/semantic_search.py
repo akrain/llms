@@ -7,7 +7,7 @@ import pandas as pd
 from pandas.core.frame import DataFrame
 import sqlite3
 
-from llms.constants import DB_FILENAME, EMBEDDING, SERIES_TITLE, RELEASED_YEAR, GENRE, IMDB_RATING, OVERVIEW, SIMILARITY, EXIT_CMD
+from constants import DB_FILENAME, EMBEDDING, SERIES_TITLE, RELEASED_YEAR, GENRE, IMDB_RATING, OVERVIEW, SIMILARITY, EXIT_CMD
 
 
 def main():

@@ -6,7 +6,7 @@ import os
 from openai.types.responses import Response
 from openai.types.responses.tool_param import Mcp
 
-from llms.constants import EMBEDDINGS_MODEL, LLM_MODEL, EXIT_CMD, CHAT_INSTRUCTIONS
+from constants import EMBEDDINGS_MODEL, LLM_MODEL, EXIT_CMD, CHAT_INSTRUCTIONS
 
 try:
     openai.api_key = os.environ["OPENAI_API_KEY"]

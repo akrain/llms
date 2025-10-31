@@ -1,0 +1,11 @@
+[project]
+name = "vertex"
+version = "0.1.0"
+description = "LLM test project"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-genai>=1.47.0",
+    "openai>=2.6.1",
+    "pandas>=2.3.3",
+]

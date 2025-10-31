@@ -5,7 +5,7 @@ import pandas as pd
 import sqlite3
 import os
 
-from llms.constants import DB_FILENAME, COMBINED, EMBEDDING
+from constants import DB_FILENAME, COMBINED, EMBEDDING
 
 
 
